@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Plant
+comment0.text=\n\ Write\ a\ description\ of\ class\ Plant\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=randomHeight\ field\ location
+comment1.target=Plant(boolean,\ Field,\ Location)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Plant\n
+comment2.params=
+comment2.target=void\ setEaten()
+comment3.params=
+comment3.target=void\ incrementHeight()
+comment4.params=daytime
+comment4.target=void\ act(boolean)
+numComments=5
