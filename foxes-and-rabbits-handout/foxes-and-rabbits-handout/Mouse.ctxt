@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Mouse
+comment0.text=\r\n\ A\ simple\ model\ of\ a\ mouse.\r\n\ Mice\ age,\ move,\ breed,\ and\ die.\r\n\ \r\n\ @author\ Abbas\ BinVakas\r\n\ @version\ 2020/07/02\r\n
+comment1.params=randomAge\ field\ location
+comment1.target=Mouse(boolean,\ Field,\ Location)
+comment1.text=\r\n\ Create\ a\ new\ mouse.\ A\ mouse\ may\ be\ created\ with\ age\r\n\ zero\ (a\ new\ born)\ or\ with\ a\ random\ age.\r\n\ \r\n\ @param\ randomAge\ If\ true,\ the\ mouse\ will\ have\ a\ random\ age.\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
+comment2.params=newMice\ daytime
+comment2.target=void\ act(java.util.List,\ boolean)
+comment2.text=\r\n\ This\ is\ what\ the\ mouse\ does\ most\ of\ the\ time\ -\ it\ runs\ \r\n\ around.\ Sometimes\ it\ will\ breed\ or\ die\ of\ old\ age.\r\n\ @param\ newMice\ A\ list\ to\ return\ newly\ born\ mice.\r\n
+comment3.params=
+comment3.target=void\ incrementAge()
+comment3.text=\r\n\ Increase\ the\ age.\r\n\ This\ could\ result\ in\ the\ mouse's\ death.\r\n
+comment4.params=newMice
+comment4.target=void\ giveBirth(java.util.List)
+comment4.text=\r\n\ Check\ whether\ or\ not\ this\ mouse\ is\ to\ give\ birth\ at\ this\ step.\r\n\ New\ births\ will\ be\ made\ into\ free\ adjacent\ locations.\r\n\ @param\ newMice\ A\ list\ to\ return\ newly\ born\ mice.\r\n
+comment5.params=
+comment5.target=int\ breed()
+comment5.text=\r\n\ Generate\ a\ number\ representing\ the\ number\ of\ births,\r\n\ if\ it\ can\ breed.\r\n\ @return\ The\ number\ of\ births\ (may\ be\ zero).\r\n
+comment6.params=
+comment6.target=boolean\ canBreed()
+comment6.text=\r\n\ A\ mouse\ can\ breed\ if\ it\ has\ reached\ the\ breeding\ age.\r\n\ @return\ true\ if\ the\ mouse\ can\ breed,\ false\ otherwise.\r\n
+numComments=7
