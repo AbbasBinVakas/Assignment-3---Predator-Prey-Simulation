@@ -31,13 +31,15 @@ public class Simulator
     // The probability that a tiger will be created in any given grid position.
     private static final double TIGER_CREATION_PROBABILITY = 0.02;
     //The probability that a plant will be created in any given grid position 
-    private static final double PLANT_CREATION_PROBABILITY = 0.1;
+    private static final double PLANT_CREATION_PROBABILITY = 0.01;
     // How many steps daytime/not daytime takes;
     private static final int DAYTIME_LENGTH = 2;
     
 
     // List of animals in the field.
     private List<Animal> animals;
+    // List of plants in the field.
+    private List<Plant> plants;
     // The current state of the field.
     private Field field;
     // The current step of the simulation.
@@ -46,8 +48,6 @@ public class Simulator
     private SimulatorView view;
     // Whether it is daytime or not.
     private boolean daytime;
-    private Gender gender;
-    private List<Plant> plants;
 
     /**
      * Construct a simulation field with default size.
@@ -78,12 +78,12 @@ public class Simulator
         // Create a view of the state of each location in the field.
         view = new SimulatorView(depth, width);
         view.setColor(Mouse.class, Color.BLACK);
-        view.setColor(Snake.class, Color.GREEN);
+        view.setColor(Snake.class, Color.PINK);
         view.setColor(Owl.class, Color.GRAY);
         view.setColor(Lion.class, Color.RED);
         view.setColor(Goat.class, Color.YELLOW);
         view.setColor(Tiger.class, Color.ORANGE);
-        view.setColor(Plant.class, Color.PINK);
+        view.setColor(Plant.class, Color.GREEN);
 
         // Setup a valid starting point.
         reset();
@@ -117,12 +117,9 @@ public class Simulator
     {
         for(int step = 1; step <= numSteps && view.isViable(field); step++) {
             simulateOneStep();
-            // delay(60);   // uncomment this to run more slowly
+            // delay(100);   // uncomment this to run more slowly
             if (step % DAYTIME_LENGTH == 0) {
-                if(daytime == true) {
-                    daytime = false;
-                }
-                else daytime = true;
+                daytime = !daytime;
             }
         }
     }
@@ -146,6 +143,10 @@ public class Simulator
                 it.remove();
             }
         }
+        for(Iterator<Plant> it = plants.iterator(); it.hasNext(); ) {
+            Plant plant = it.next();
+            plant.act(daytime);
+        }
 
         // Add the newly born foxes and rabbits to the main lists.
         animals.addAll(newAnimals);
@@ -160,6 +161,7 @@ public class Simulator
     {
         step = 0;
         animals.clear();
+        plants.clear();
         populate();
 
         // Show the starting state in the view.
@@ -205,7 +207,7 @@ public class Simulator
                     Tiger tiger = new Tiger(true, field, location);
                     animals.add(tiger);
                 }
-                else if (rand.nextDouble() <= PLANT_CREATION_PROBABILITY) {
+                else if(rand.nextDouble() <= PLANT_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Plant plant = new Plant(true, field, location);
                     plants.add(plant);
