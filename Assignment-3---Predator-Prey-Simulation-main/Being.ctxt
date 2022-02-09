@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Being
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Beings\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=field\ location
+comment1.target=Being(Field,\ Location)
+comment2.params=newLocation
+comment2.target=void\ setLocation(Location)
+comment2.text=\r\n\ Place\ the\ animal\ at\ the\ new\ location\ in\ the\ given\ field.\r\n\ @param\ newLocation\ The\ animal's\ new\ location.\r\n
+comment3.params=
+comment3.target=Location\ getLocation()
+comment3.text=\r\n\ Return\ the\ animal's\ location.\r\n\ @return\ The\ animal's\ location.\r\n
+comment4.params=
+comment4.target=Field\ getField()
+comment4.text=\r\n\ Return\ the\ animal's\ field.\r\n\ @return\ The\ animal's\ field.\r\n
+comment5.params=
+comment5.target=void\ setDead()
+comment5.text=\r\n\ Indicate\ that\ the\ animal\ is\ no\ longer\ alive.\r\n\ It\ is\ removed\ from\ the\ field.\r\n
+comment6.params=
+comment6.target=boolean\ isAlive()
+comment6.text=\r\n\ Check\ whether\ the\ animal\ is\ alive\ or\ not.\r\n\ @return\ true\ if\ the\ animal\ is\ still\ alive.\r\n
+numComments=7
